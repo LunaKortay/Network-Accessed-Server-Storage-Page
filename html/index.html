@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <title>NAS HOME</title>
+</head>
+<body>
+    <div style="width: 100%; height: 10vh; background-color: rgb(44, 44, 46);"></div>
+    <div class="main_container">
+        <div class="container">
+            <nav style="display: block;">
+                <a href="#home" class="menu_item" data-content="home">
+                    <div> Home </div>
+                </a>
+                <a href="#files" class="menu_item" data-content="files">
+                    <div> Files </div>
+                </a>
+                <a href="#settings" class="menu_item" data-content="settings">
+                    <div> Settings </div>
+                </a>
+                <a href="#user" class="menu_item" data-content="user">
+                    <div> User </div>
+                </a>
+            </nav>
+        </div>
+
+        <div class="second_container">
+            <h2 id="section-title"style="color: white;">Welcome to the Right Side!</h2>
+            <p id="section-content" style="color: white;">This is the content for the right container.</p>
+
+        </div>
+    </div>
+
+    <script>
+        const contentMap = {
+            home: {
+                title: "Home",
+                content: "Welcome to the Home page! Here you can manage your main dashboard."
+            },
+            files: {
+                title: "Files",
+                content: "This is the Files page. Here you can browse and manage your stored files."
+            },
+            settings: {
+                title: "Settings",
+                content: "Adjust your preferences and configurations in the Settings page."
+            },
+            user: {
+                title: "User",
+                content: "This is the User page. Manage your account and profile settings here."
+            }
+        };
+        function updateContent(section) {
+                const title = document.getElementById("section-title");
+                const content = document.getElementById("section-content");
+                title.textContent = contentMap[section].title;
+                content.textContent = contentMap[section].content;
+            }
+
+            document.querySelectorAll(".menu_item").forEach(item => {
+                item.addEventListener("click", (event) => {
+                    event.preventDefault();
+                    const section = event.currentTarget.getAttribute("data-content");
+                    updateContent(section);
+                });
+            });
+
+        document.querySelectorAll('.menu_item').forEach(item => 
+        {
+            item.addEventListener('click', ()=> {
+                document.querySelectorAll('.menu_item').forEach(el => el.classList.remove('clicked'));
+                item.classList.add('clicked');
+
+            });    
+        });    
+    </script>
+</body>
+</html>

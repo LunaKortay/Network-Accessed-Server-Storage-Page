@@ -1,0 +1,78 @@
+
+a {
+    text-decoration:none;
+}
+
+body {
+    margin: 0;
+    background-color: rgb(31, 30, 30);
+}
+
+.main_container {
+    display: flex;
+    flex-direction: row;
+    height: 80vh;
+    background-color: rgb(21, 30, 30);
+}
+
+.container {
+    overflow-y: auto;
+    
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+
+.container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background-color: rgb(46, 54, 54);
+    border-radius: 4px;
+}
+
+
+
+.container::-webkit-scrollbar-track {
+    background-color: rgb(58, 76, 76);
+}
+
+
+
+.menu_item {
+        
+        background-color: rgb(46, 54, 54); 
+        border-radius: 3vh;
+        
+        width: 20vh; 
+        height: 10vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: larger;
+        text-align: center;
+        margin-bottom: 10px;
+        transition: transform 0.3s, background-color 0.3s;
+        
+ }
+
+.menu_item.clicked {
+    background-color: rgb(200, 100, 100);
+    transform: scale(0.95);
+}
+
+
+
+
+
+ .second_container {
+    background-color: rgb(46, 54, 54);
+    flex: 1;
+    padding-top: 10px;  
+    padding-bottom: 20px;
+    padding-left: 10px;
+    color: white;
+    overflow-y: auto;
+ }
